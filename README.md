@@ -1,5 +1,7 @@
 # 16 — Network Traffic Analysis (PCAP → C2 indicators)
 
+[![CI](https://github.com/BL3IP/pcap-c2-analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/BL3IP/pcap-c2-analyzer/actions/workflows/ci.yml)
+
 A Python **PCAP analyzer** that pulls threat indicators out of a packet capture — DNS queries,
 HTTP Host headers, top talkers — and **detects C2 beaconing** (regular call-home intervals).
 
