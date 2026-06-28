@@ -70,7 +70,11 @@ def main(argv=None) -> int:
     ap.add_argument("pcap")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args(argv)
-    r = analyze(args.pcap)
+    try:
+        r = analyze(args.pcap)
+    except FileNotFoundError:
+        print(f"error: pcap file not found: {args.pcap}", file=sys.stderr)
+        return 2
     if args.json:
         print(json.dumps(r, indent=2))
         return 0
